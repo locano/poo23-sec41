@@ -7,7 +7,8 @@ public class App {
     public static void main(String[] args) {
         // arreglosObjetos();
         // accederAleatoriamente();
-        arreglosDinamicos();
+        // arreglosDinamicos();
+        ejemploEjercicio2();
     }
 
     public static void arreglosPrimitivos(){
@@ -71,7 +72,7 @@ public class App {
     public static void arreglosDinamicos(){
         ArrayList<String> nombresDinamicos = new ArrayList<>();
 
-        // Longitud
+        // Longitud 0
         int longitud = nombresDinamicos.size();
 
         // Agragar un valor
@@ -79,16 +80,16 @@ public class App {
         nombresDinamicos.add("Ana");
         nombresDinamicos.add("Juan");
 
-        // Longitud
+        // Longitud 3
         int longitud2 = nombresDinamicos.size();
 
         System.out.println(nombresDinamicos.get(1));
 
-        // eliminar un valor
+        // eliminar un valor en indice 
         nombresDinamicos.remove(1);
 
 
-        // Longitud
+        // Longitud 2
         int longitud3 = nombresDinamicos.size();
 
         ArrayList<Persona> personasDinamicos = new ArrayList<>();
@@ -98,4 +99,53 @@ public class App {
 
     }
 
+    public static void ejemploEjercicio2(){
+        // Inventario de una tienda con 10 productos
+        // Se puede comprar un producto y llevar el inventario
+
+        // 1. Tener un arreglo donde almacenaran los productos
+        // 2. Llenar ese arreglo
+
+        Producto[] productos = new Producto[10];
+        // [null, null, null, null, null, null, null, null, null, null]
+        Producto a = new Producto();
+        a.setNombre("Laptop");
+
+        productos[0] = a;
+        // ["Laptop", null, null, null, null, null, null, null, null, null]
+       
+
+        for (int i = 0; i < productos.length; i++) {
+            productos[i] = new Producto();
+        }
+        // [Producto, Producto, Producto, Producto, Producto, Producto, Producto, Producto, Producto, Producto]
+    
+
+
+
+
+
+        ArrayList<Producto> productosDinamicos = new ArrayList<>();
+        // []
+        Producto x = new Producto();
+        x.setNombre("Laptop");
+
+        productosDinamicos.add(x);
+        // ["Laptop"]
+        
+        Producto y = new Producto();
+        y.setNombre("Telefono"); 
+
+        productosDinamicos.add(y);
+        // ["Laptop", "Telefono"]
+
+        // obtengol la longitud
+        int longitud = productosDinamicos.size();
+
+        for (int i = 0; i < longitud; i++) {
+            Producto actual = productosDinamicos.get(i);
+            System.out.println(actual.getNombre());
+        }
+
+    }
 }
