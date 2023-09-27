@@ -1,4 +1,4 @@
-package Herencia;
+package Herencia.Otros;
 
 public class Practicante extends Jugador {
 

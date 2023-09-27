@@ -1,4 +1,4 @@
-package Herencia;
+package Herencia.Otros;
 
 // SUPER CLASE / CLASE PADRE
 public class Persona {

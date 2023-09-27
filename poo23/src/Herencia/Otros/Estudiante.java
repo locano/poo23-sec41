@@ -1,4 +1,4 @@
-package Herencia;
+package Herencia.Otros;
 
 // clase hija / subcalse
 public class Estudiante extends Persona{
