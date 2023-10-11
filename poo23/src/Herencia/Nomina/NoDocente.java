@@ -27,7 +27,9 @@ public class NoDocente extends Trabajador {
         this.plus_feriados = tarifa_diaria * 2 * cantidad_feriados;
     }
 
-    public void calcularNomina(){
-        this.nomina = salario - descuento + plus_feriados;
+    @Override
+    public double calcularNomina(){
+        this.nomina = super.calcularNomina() + plus_feriados;
+        return nomina;
     }
 }

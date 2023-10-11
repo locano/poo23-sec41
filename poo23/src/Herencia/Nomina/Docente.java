@@ -1,10 +1,11 @@
 package Herencia.Nomina;
 
-public class Docente extends Trabajador{
+public class Docente extends Trabajador {
     double plus_antigueadad;
     double plus_grado_cientifico;
     double anios_trabajados;
     String grado_cientifico;
+    String categoria;
 
     Docente(double salario, double horas_ausente, String nombre, String grado, double anios) {
         // llamar al constructor de la herencia en este caso Trabajador
@@ -51,7 +52,26 @@ public class Docente extends Trabajador{
     }
 
     @Override
-    public void calcularNomina(){
-        this.nomina = salario - descuento + plus_antigueadad + plus_grado_cientifico;
+    public double calcularNomina() {
+        this.nomina = super.calcularNomina() + plus_antigueadad + plus_grado_cientifico;
+
+        // Agrego el porcente extra segun categoria
+        if (categoria == "instructor") {
+            this.nomina = this.nomina * 1.1; // 10%
+        }
+
+        if (categoria == "asistente") {
+            this.nomina = this.nomina * 1.12; // 12%
+        }
+
+        if (categoria == "auxiliar") {
+            this.nomina = this.nomina * 1.15; // 15%
+        }
+
+        if (categoria == "titular") {
+            this.nomina = this.nomina * 1.2; // 20%
+        }
+
+        return nomina;
     }
 }

@@ -63,7 +63,7 @@ public class Trabajador {
         this.tarifa_diaria = salario / 24;
     }
 
-    public void calcularNomina(){
-        this.nomina = 100;
+    public double calcularNomina(){
+        return salario - descuento;
     }
 }
